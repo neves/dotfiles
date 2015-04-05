@@ -113,6 +113,10 @@ brew tap josegonzalez/homebrew-php
 brew install php56 --with-apache
 brew link php56
 
+# Configuração do push do git. O parametro 'matching' efetua push para todos os branchs com mesmo nome em repos diferentes
+# @see http://git-scm.com/docs/git-config (Procurar por push.default)
+git config --global push.default matching
+
 # http://caskroom.io/
 # instalar softwares desktop para o Mac
 brew install phinze/cask/brew-cask
