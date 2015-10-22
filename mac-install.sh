@@ -265,6 +265,24 @@ open -a Safari 'http://gastecnologia.com.br:8080/diagnostico'
 # para instalar, precisa reinicar o mac segurando CMD+R
 # Abrir o terminal e digitar csrutil disable
 
+# ......................................................................................................................
+# ANDROID, IOS, CORDOVA
+# ......................................................................................................................
+npm install -g cordova
+brew install android-sdk ios-sim
+# instalar os seguintes pacotes apenas:
+# Tools/Android SDK Tools
+# Tools/Android SDK Platform-tools
+# Tools/Android SDK Build-tools
+# Android 5.1.1 (API 22)/SDK Platform
+android
+# utilizar genymotion ao invés do Android SDK
+brew cask install genymotion
+open -a Genymotion
+# logar e instalar emulador: Google Nexus 4 - 4.4.4 - API 19 - 768x1280
+# Clicar em play para iniciar o emulador
+# cordova run # para rodar no emulador, que para o cordova será como um dispositivo real
+
 # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 # OPTIONAL
 # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -339,9 +357,6 @@ brew cask install vagrant
 
 # Docker UI
 brew cask install kitematic
-
-# mobile
-brew install android-sdk ant ios-sim
 
 transmission-remote-gui asepsis android-file-transfer teamviewer unrar
 
