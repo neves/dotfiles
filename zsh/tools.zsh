@@ -10,7 +10,6 @@ alias paths='echo $PATH | tr ":" "\n"'
 
 
 alias fsize="stat -f %z"
-alias down="cd ~/Downloads"
 
 # FileSearch
 function f() { find . -iname "*$1*" ${@:2} }
