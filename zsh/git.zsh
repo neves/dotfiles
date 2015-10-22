@@ -1,5 +1,5 @@
 alias g="git"
-alias gp="git push"
+alias gp="git push -v --progress"
 alias gd="git icdiff"
 # alias gs="git status" # conflict with GhostScript
 alias gt="git status"
