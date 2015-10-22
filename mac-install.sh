@@ -446,3 +446,6 @@ rm DiffMerge*.dmg
 # install composer (https://getcomposer.org/doc/00-intro.md)
 curl -sS https://getcomposer.org/installer | php
 mv composer.phar /usr/local/bin/composer
+
+# install PHPUnit
+brew install phpunit
