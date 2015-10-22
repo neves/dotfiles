@@ -4,6 +4,17 @@ pathadd() {
     fi
 }
 
+# move file and replace with a link
+mvln() {
+  if [ $# -lt 2 ]
+  then
+    echo 'mvln ~/.gist ~/Dropbox/.gist'
+    echo 'will move file ~/.gist to ~/Dropbox/.gist and link ~/Dropbox/.gist to ~/.gist'
+    return
+  fi
+  mv $1 $2 && ln -sf $2 $1
+}
+
 alias addpath=pathadd
 
 alias paths='echo $PATH | tr ":" "\n"'
