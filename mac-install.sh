@@ -279,6 +279,8 @@ android
 # utilizar genymotion ao invés do Android SDK
 brew cask install genymotion
 open -a Genymotion
+# seguir o link abaixo para instalar o Google Apps no genymotion
+# http://inthecheesefactory.com/blog/how-to-install-google-services-on-genymotion/en
 # logar e instalar emulador: Google Nexus 4 - 4.4.4 - API 19 - 768x1280
 # Clicar em play para iniciar o emulador
 # cordova run # para rodar no emulador, que para o cordova será como um dispositivo real

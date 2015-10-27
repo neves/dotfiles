@@ -1,3 +1,13 @@
+# http://entrproject.org/
+entr-rspec() {
+  if [ $# -lt 1 ]
+  then
+    echo 'entr-rspec spec.rb'
+    return
+  fi
+  echo $1 | entr -c rspec /_
+}
+
 pathadd() {
     if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
         PATH="${PATH:+"$PATH:"}$1"
@@ -46,7 +56,7 @@ cdpwd() {
 loop() {
   if [ $# -lt 2 ]
   then
-    echo 'Usage: loop ''ls -lah $fullpath'' dir/*'
+    echo "Usage: loop 'ls -lah \$fullpath' dir/*"
     echo 'Variables: fullpath, name, ext, prefix'
     echo 'Sample (convert pdf to png): loop ''convert $fullpath png/$prefix.png'' pfds/*.pdf'
     return
