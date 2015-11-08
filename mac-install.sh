@@ -141,7 +141,7 @@ brew cask install qlprettypatch betterzipql suspicious-package
 #.......................................................................................................................
 
 # essential
-brew install ssh-copy-id sqlite3 entr fasd coreutils the_silver_searcher # ag
+brew install ssh-copy-id sqlite3 entr fasd coreutils gnu-sed the_silver_searcher # ag
 
 # essential tools
 brew cask install google-chrome firefox evernote rowanj-gitx sourcetree sequel-pro lightpaper cheatsheet
@@ -160,7 +160,7 @@ brew install ffmpeg youtube-dl mosh
 brew install icdiff
 
 # pessoal.  Dash: license.dash-license no DropBox/osx
-brew cask install vlc subtitle-master transmission dash
+brew cask install vlc subtitle-master transmission dash slack
 open -a Dash
 
 # window shortcuts
@@ -181,6 +181,8 @@ gem install bundler
 
 #git up
 gem install git-up rails
+# gerenciar start on boot do mac https://github.com/eddiezane/lunchy
+gem install lunchy
 
 # auto rbenv rehash
 git clone https://github.com/sstephenson/rbenv-gem-rehash.git ~/.rbenv/plugins/rbenv-gem-rehash
@@ -269,7 +271,7 @@ open -a Safari 'http://gastecnologia.com.br:8080/diagnostico'
 # ANDROID, IOS, CORDOVA
 # ......................................................................................................................
 npm install -g cordova
-brew install android-sdk ios-sim
+brew install android-sdk ios-sim ios-deploy
 # instalar os seguintes pacotes apenas:
 # Tools/Android SDK Tools
 # Tools/Android SDK Platform-tools
@@ -285,9 +287,16 @@ open -a Genymotion
 # Clicar em play para iniciar o emulador
 # cordova run # para rodar no emulador, que para o cordova será como um dispositivo real
 
+# ......................................................................................................................
+# OTHER TOOLS
+# ......................................................................................................................
+
+# https://github.com/mhagger/git-imerge
+
 # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 # OPTIONAL
 # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
 
 cat <<'EOF' > ~/.odbc.ini
 [ODBC Data Sources]
@@ -424,7 +433,7 @@ android
 for i in `gem list --no-versions`; do sudo gem uninstall -aIx $i; done
 
 #git up
-sudo gem install git-up
+gem install git-up
 
 # mac command line stats
 gem install iStats
@@ -435,34 +444,3 @@ brew install mysql
 # ln -sfv /usr/local/opt/mysql/*.plist ~/Library/LaunchAgents
 # manual start
 mysql.server start
-
-# ======================================================== NÃO PRECISA MAIS, UTILIZAR AGORA PELO CASK ==================
-
-# Sublime url protocol: https://github.com/saetia/sublime-url-protocol-mac
-cd ~/Downloads
-wget https://github.com/saetia/sublime-url-protocol-mac/archive/master.zip
-unzip master.zip
-mv sublime-url-protocol-mac-master/Sublime\ Protocol.app ~/Applications/
-open -a 'Sublime Protocol'
-rm master.zip
-rm -rf sublime-url-protocol-mac-master
-
-# Sublime Extensions
-# https://github.com/gornostal/Modific
-# http://editorconfig.org/
-
-# DiffMerge
-cd ~/Downloads
-wget http://download-us.sourcegear.com/DiffMerge/4.2.0/DiffMerge.4.2.0.697.intel.stable.dmg
-hdiutil mount DiffMerge*.dmg
-cp -r "/Volumes/DiffMerge 4.2.0.697 intel stable/DiffMerge.app" /Applications/
-hdiutil unmount /Volumes/DiffMerge*
-sudo ln -sf /Applications/DiffMerge.app/Contents/Resources/diffmerge.sh  /usr/bin/diffmerge
-rm DiffMerge*.dmg
-
-# install composer (https://getcomposer.org/doc/00-intro.md)
-curl -sS https://getcomposer.org/installer | php
-mv composer.phar /usr/local/bin/composer
-
-# install PHPUnit
-brew install phpunit

@@ -1,0 +1,50 @@
+#!/usr/bin/env ruby
+
+begin
+  require 'awesome_print'
+rescue
+  puts 'gem install awesome_print'
+  exit 1
+end
+
+require 'optparse'
+
+def generate_code(rx, opt)
+  code = "rx = Regexp.new(/#{rx}/"
+  if opt > 0
+    code << ', Regexp::MULTILINE'
+  end
+  code << ')'
+  code
+end
+
+options = 0
+output = :ap
+
+OptionParser.new do |opts|
+  opts.banner = "echo foo@gmail.com, bar@gmail.com | ruby-regexp '(\\w+)@(\\w+.\\w+)'"
+
+  opts.on("-m", "--multiline", "Multiline Match") do
+    options |= Regexp::MULTILINE
+  end
+
+  opts.on("-t", "--text", "output 1 match each line") do
+    output = :text
+  end
+
+  opts.on('-c', '--code', 'generate ruby code for regexp') do
+    output = :code
+  end
+
+end.parse!
+
+regexp = ARGV.first
+
+matches = STDIN.read.scan(Regexp.new(regexp, options))
+
+case output
+when :code then puts generate_code(regexp, options)
+when :ap then ap matches, index: false
+when :text then puts matches.flatten.join "\n"
+end
+
