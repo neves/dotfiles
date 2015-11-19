@@ -1,3 +1,16 @@
+# cria o caminho e o arquivo
+touchpath() {
+    if [ $# -lt 1 ]; then
+        echo "Usage: touchpath path/to/file.txt";
+        return 1;
+    fi
+
+    for f in "$@"; do
+        mkdir -p -- "$(dirname -- "$f")"
+        touch -- "$f"
+    done
+}
+
 # http://entrproject.org/
 entr-rspec() {
   if [ $# -lt 1 ]

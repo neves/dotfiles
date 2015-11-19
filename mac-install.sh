@@ -133,7 +133,9 @@ curl -L https://github.com/mkalmes/brewupdate/raw/develop/brewupdate-install.sh 
 # Finder QuickLook extensions: https://github.com/sindresorhus/quick-look-plugins
 #.......................................................................................................................
 
-brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json quicklook-csv qlimagesize webpquicklook
+brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json quicklook-csv
+# quicklook images
+brew cask install qlimagesize webpquicklook animated-gif-quicklook
 brew cask install qlprettypatch betterzipql suspicious-package
 
 # ......................................................................................................................
@@ -141,7 +143,7 @@ brew cask install qlprettypatch betterzipql suspicious-package
 #.......................................................................................................................
 
 # essential
-brew install ssh-copy-id sqlite3 entr fasd coreutils gnu-sed the_silver_searcher # ag
+brew install ssh-copy-id sqlite3 entr fasd coreutils gnu-sed git-imerge the_silver_searcher # ag
 
 # essential tools
 brew cask install google-chrome firefox evernote rowanj-gitx sourcetree sequel-pro lightpaper cheatsheet
