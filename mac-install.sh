@@ -250,6 +250,14 @@ pip install slugify
 pip install pygments
 
 # ......................................................................................................................
+# Sublime Linters
+# ......................................................................................................................
+
+npm install -g jshint
+npm install -g jade-lint
+gem install slim_lint
+
+# ......................................................................................................................
 # PDF
 # ......................................................................................................................
 
@@ -348,6 +356,9 @@ brew install git-ftp
 brew cask install xquartz
 brew install poppler webp
 brew install swftools --with-xpdf --with-jpeg
+
+# ainda não disponível oficialmente,
+# baixar em: https://www.pdflabs.com/tools/pdftk-server/
 brew install https://raw.github.com/quantiverge/homebrew-binary/pdftk/pdftk.rb
 
 # extras
@@ -409,7 +420,6 @@ brew cask install robomongo
 brew cask install appcleaner
 brew cask install adobe-air
 brew cask install git-annex
-brew cask install pdftk
 # para trabalhar com pdf e vetores
 brew cask install xquartz
 # painel de configuração de associação de extensões/URL Scheme

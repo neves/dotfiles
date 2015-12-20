@@ -1,3 +1,11 @@
+gs-trimbox() {
+  \gs -sDEVICE=pdfwrite -dBATCH -dNOPAUSE -dColorConversionStrategy=/RGB -dUseTrimBox -sOutputFile="$2" "$1"
+}
+
+gs-cropbox() {
+  \gs -sDEVICE=pdfwrite -dBATCH -dNOPAUSE -dColorConversionStrategy=/RGB -dUseCropBox -sOutputFile="$2" "$1"
+}
+
 pdf-remove-page() {
   if [ $# -lt 2 ]
   then

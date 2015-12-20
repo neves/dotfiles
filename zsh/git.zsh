@@ -9,7 +9,7 @@ unalias gs &> /dev/null
 [[ $(which gs) ]] || alias gs="git status"
 
 unalias gc &> /dev/null
-gc() { git commit -m "$*" && git status }
+gc() { noglob git commit -m "$*" && git status }
 
 unalias ga &> /dev/null
 ga() { git add -A $* && git status }

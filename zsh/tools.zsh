@@ -1,3 +1,14 @@
+# feature #40 #9 (creates branch feature/sprint-40-story-9)
+alias feature="ruby -e 'print %(feature/sprint-%d-story-%d) % ARGV.join.scan(/\d+/)'"
+
+# duplicate file in path with new name:
+# Usage: duplicate path/to/file new-name
+function duplicate(){ cp -r $1 "${1:h}/$2" }
+
+# rename file in path with new name:
+# Usage: rename path/to/file new-name
+function rename(){ mv $1 "${1:h}/$2" }
+
 # cria o caminho e o arquivo
 touchpath() {
     if [ $# -lt 1 ]; then
@@ -107,17 +118,22 @@ rt() {
     echo 'Comitar rt <recipe> commit'
     return
   fi
-  bin/rake rails:template LOCATION=~/Dropbox/projects/rails/template/template.rb RECIPE=$1 COMMIT=$2
-}
 
-# open gem with sublime
-subl-gem() {
-  if [ $# -lt 1 ]
-  then
-    echo 'Usage: subl-gem rails'
-    return
+  if [ "Gemfile" -nt "Gemfile.lock" ]; then
+    echo 'before: bundle install ...'
+    bundle install
+    touch Gemfile.lock
   fi
-  subl $(bundler show $1)
+
+  spring stop
+
+  bin/rake rails:template LOCATION=~/Dropbox/projects/rails/template/template.rb RECIPE=$1 COMMIT=$2
+
+  if [ "Gemfile" -nt "Gemfile.lock" ]; then
+    echo 'after: bundle install ...'
+    bundle install
+    touch Gemfile.lock
+  fi
 }
 
 # parar o rails iniciado com rails server -d
