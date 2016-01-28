@@ -1,3 +1,13 @@
+# try inflections in console
+alias pry-inflections="pry -f -r'active_support/inflector' -r'./config/initializers/inflections'"
+
+# open in default $EDITOR the last migration created in a Rails app
+alias last_migration="$EDITOR db/migrate/$(ls db/migrate/ | sort | tail -1)"
+
+# converte double quotes to single quotes
+# ou: gsed -i "y/\"/'/"
+function single-quotes(){ sed -i '' "y/\"/'/" "$1" }
+
 # feature #40 #9 (creates branch feature/sprint-40-story-9)
 alias feature="ruby -e 'print %(feature/sprint-%d-story-%d) % ARGV.join.scan(/\d+/)'"
 
