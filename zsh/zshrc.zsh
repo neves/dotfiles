@@ -22,7 +22,9 @@ autoload -U zmv
 
 source $HERE/env.zsh
 source $HERE/tools.zsh
-source $HERE/pdf-tools.zsh
+source $HERE/tools/pdf.zsh
+source $HERE/tools/media.zsh
+source $HERE/tools/shell.zsh
 source $HERE/git.zsh
 source $HERE/fasd.zsh
 

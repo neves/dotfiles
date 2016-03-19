@@ -146,7 +146,7 @@ brew cask install qlprettypatch betterzipql suspicious-package
 brew install ssh-copy-id sqlite3 entr fasd coreutils gnu-sed git-imerge the_silver_searcher # ag
 
 # essential tools
-brew cask install google-chrome firefox evernote rowanj-gitx sourcetree sequel-pro lightpaper cheatsheet
+brew cask install google-chrome firefox evernote rowanj-gitx sourcetree sequel-pro lightpaper cheatsheet jumpcut #clipboard history
 open -a CheatSheet # keyboard shortcut holding CMD
 open -a 'Google Chrome' # Ligar Avisar Antes de Sair CMD+Q
 open -a Evernote
