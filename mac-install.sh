@@ -1,11 +1,18 @@
 # ......................................................................................................................
+# passwordless sudo
+#.......................................................................................................................
+
+sudo mkdir -p /private/etc/sudoers.d
+echo '%wheel ALL=(ALL) NOPASSWD: ALL' | sudo tee /private/etc/sudoers.d/passwordless
+sudo dscl . append /Groups/wheel GroupMembership neves
+
+# ......................................................................................................................
 # OSX config
 #.......................................................................................................................
 
 sudo defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
 sudo defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 sudo defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
-sudo defaults write com.apple.AppleMultitouchTrackpad Clicking 1
 
 sudo defaults write com.apple.CrashReporter DialogType none
 
@@ -125,14 +132,6 @@ mkdir -p ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/
 ln -fs ~/Dropbox/osx/sublime3 ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
 open -a 'Sublime Text'
 # instalar package control e aguardar update: https://packagecontrol.io/installation
-
-# ......................................................................................................................
-# passwordless sudo
-#.......................................................................................................................
-
-sudo mkdir -p /private/etc/sudoers.d
-echo '%wheel ALL=(ALL) NOPASSWD: ALL' | sudo tee /private/etc/sudoers.d/passwordless
-sudo dscl . append /Groups/wheel GroupMembership neves
 
 # ......................................................................................................................
 # automatiza brew update todo dia as 11:00
