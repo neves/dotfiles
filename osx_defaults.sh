@@ -4,6 +4,15 @@
 
 # source: https://mths.be/osx
 
+# ......................................................................................................................
+# passwordless sudo
+#.......................................................................................................................
+
+sudo mkdir -p /private/etc/sudoers.d
+echo '%wheel ALL=(ALL) NOPASSWD: ALL' | sudo tee /private/etc/sudoers.d/passwordless
+sudo dscl . append /Groups/wheel GroupMembership neves
+
+
 ###############################################################################
 # SSD-specific tweaks                                                         #
 ###############################################################################
@@ -26,6 +35,12 @@ defaults write NSGlobalDomain AppleFontSmoothing -int 2
 
 # Enable HiDPI display modes (requires restart)
 defaults write /Library/Preferences/com.apple.windowserver DisplayResolutionEnabled -bool true
+
+echo "Config PHP"
+echo 'date.timezone = America/Sao_Paulo' > /etc/php.ini
+
+echo "Disable dashboard widgets (saves RAM)"
+defaults write com.apple.dashboard mcx-disabled -boolean YES
 
 echo "Disable Notification Center and remove the menu bar icon"
 launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist 2> /dev/null
