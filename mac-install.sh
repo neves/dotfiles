@@ -1,47 +1,5 @@
-# ......................................................................................................................
-# passwordless sudo
-#.......................................................................................................................
 
-sudo mkdir -p /private/etc/sudoers.d
-echo '%wheel ALL=(ALL) NOPASSWD: ALL' | sudo tee /private/etc/sudoers.d/passwordless
-sudo dscl . append /Groups/wheel GroupMembership neves
-
-# ......................................................................................................................
-# OSX config
-#.......................................................................................................................
-
-sudo defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
-sudo defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
-sudo defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
-
-sudo defaults write com.apple.CrashReporter DialogType none
-
-# Disable dashboard widgets (saves RAM)
-sudo defaults write com.apple.dashboard mcx-disabled -boolean YES
-
-# Works only after reboot
-# Enable full keyboard access for all controls (e.g. enable Tab in modal dialogs)
-defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
-# Disable press-and-hold for keys in favor of key repeat
-defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
-# Set a blazingly fast keyboard repeat rate
-defaults write NSGlobalDomain KeyRepeat -int 0
-
-# Disable Mission control(F3) animation
-defaults write com.apple.dock expose-animation-duration -float 0.05
-# disable Ds_Store on network
-defaults write com.apple.desktopservices DSDontWriteNetworkStores true
-
-# Finder: show hidden files by default
-defaults write com.apple.finder AppleShowAllFiles -bool true
-# Finder: show all filename extensions
-defaults write NSGlobalDomain AppleShowAllExtensions -bool true
-
-killall Dock
-killall Finder
-
-# Config PHP
-echo 'date.timezone = America/Sao_Paulo' | sudo tee /etc/php.ini
+curl https://raw.githubusercontent.com/neves/dotfiles/master/osx_defaults.sh | sudo bash
 
 # ......................................................................................................................
 # HomeBrew
