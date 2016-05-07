@@ -1,10 +1,40 @@
+#!/bin/bash
+
 # curl https://raw.githubusercontent.com/neves/dotfiles/master/osx_defaults.sh | sudo bash
 
+# source: https://mths.be/osx
+
+###############################################################################
+# SSD-specific tweaks                                                         #
+###############################################################################
+
+# Disable hibernation (speeds up entering sleep mode)
+pmset -a hibernatemode 0
+
+# Remove the sleep image file to save disk space
+rm /private/var/vm/sleepimage
+# Create a zero-byte file instead…
+touch /private/var/vm/sleepimage
+# …and make sure it can’t be rewritten
+chflags uchg /private/var/vm/sleepimage
+
+# Disable the sudden motion sensor as it’s not useful for SSDs
+pmset -a sms 0
+
+# Enable subpixel font rendering on non-Apple LCDs
+defaults write NSGlobalDomain AppleFontSmoothing -int 2
+
+# Enable HiDPI display modes (requires restart)
+defaults write /Library/Preferences/com.apple.windowserver DisplayResolutionEnabled -bool true
+
+echo "Disable Notification Center and remove the menu bar icon"
+launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist 2> /dev/null
+
 printf "System - Disable boot sound effects\n"
-sudo nvram SystemAudioVolume=" "
+nvram SystemAudioVolume=" "
 
 printf "System - Reveal IP address, hostname, OS version, etc. when clicking the login window clock\n"
-sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
+defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
 
 # printf "System - Disable automatic termination of inactive apps\n"
 # defaults write NSGlobalDomain NSDisableAutomaticTermination -bool true
@@ -41,7 +71,7 @@ printf "System - Automatically restart if system freezes\n"
 systemsetup -setrestartfreeze on
 
 # printf "System - Disable software updates\n"
-# sudo softwareupdate --schedule off
+# softwareupdate --schedule off
 
 printf "Keyboard - Automatically illuminate built-in MacBook keyboard in low light\n"
 defaults write com.apple.BezelServices kDim -bool true
@@ -138,7 +168,7 @@ printf "Finder - Allow text selection in Quick Look\n"
 defaults write com.apple.finder QLEnableTextSelection -bool true
 
 printf "iOS Simulator - Symlink the iOS Simulator application\n"
-sudo ln -sf "/Applications/Xcode.app/Contents/Applications/iPhone Simulator.app" "/Applications/iOS Simulator.app"
+ln -sf "/Applications/Xcode.app/Contents/Applications/iPhone Simulator.app" "/Applications/iOS Simulator.app"
 
 printf "Safari - Set home page to 'about:blank' for faster loading\n"
 defaults write com.apple.Safari HomePage -string "about:blank"
