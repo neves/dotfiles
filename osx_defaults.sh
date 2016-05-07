@@ -4,6 +4,8 @@
 
 # sources: https://mths.be/osx, https://gist.github.com/brandonb927/3195465/
 
+# MANUAL: configurar trackpad, acessibilidade arrastar com 3 dedos e spotlight
+
 clear
 
 # ......................................................................................................................
