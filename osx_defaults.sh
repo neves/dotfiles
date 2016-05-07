@@ -1,3 +1,5 @@
+# curl https://raw.githubusercontent.com/neves/dotfiles/master/osx_defaults.sh | sudo bash
+
 printf "System - Disable boot sound effects\n"
 sudo nvram SystemAudioVolume=" "
 
