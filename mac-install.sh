@@ -48,6 +48,7 @@ rm Hack-*-ttf.zip
 
 # link .ssh
 ln -fs ~/Dropbox/osx/ssh ~/.ssh
+chmod go-rwx .ssh/*
 ln -sf ~/Dropbox/osx/zsh/.zsh_history ~/.zsh_history
 
 brew install zsh
