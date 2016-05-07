@@ -9,12 +9,13 @@ curl https://raw.githubusercontent.com/neves/dotfiles/master/osx_defaults.sh | s
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 # http://caskroom.io/
+# Brewfile like Gemfile: https://github.com/Homebrew/homebrew-bundle
 # add beta versions of softwares: https://github.com/caskroom/homebrew-versions
+
 brew doctor
 brew tap caskroom/cask
-brew tap caskroom/versions
 brew tap Homebrew/bundle
-
+brew tap caskroom/versions
 brew update
 
 # ......................................................................................................................
