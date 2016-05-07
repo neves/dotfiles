@@ -2,7 +2,7 @@
 
 # curl https://raw.githubusercontent.com/neves/dotfiles/master/osx_defaults.sh | bash
 
-# source: https://mths.be/osx
+# sources: https://mths.be/osx, https://gist.github.com/brandonb927/3195465/
 
 clear
 
@@ -122,6 +122,10 @@ defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool
 defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
+echo "Setting trackpad & mouse speed to a reasonable number"
+defaults write -g com.apple.trackpad.scaling 2
+defaults write -g com.apple.mouse.scaling 2.5
+
 printf "Trackpad - Use CONTROL (^) with scroll to zoom\n"
 defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true
 defaults write com.apple.universalaccess HIDScrollZoomModifierMask -int 262144
@@ -189,6 +193,9 @@ defaults write com.apple.finder WarnOnEmptyTrash -bool false
 
 printf "Finder - Allow text selection in Quick Look\n"
 defaults write com.apple.finder QLEnableTextSelection -bool true
+
+echo "Use column view in all Finder windows by default"
+defaults write com.apple.finder FXPreferredViewStyle Clmv
 
 printf "iOS Simulator - Symlink the iOS Simulator application\n"
 sudo ln -sf "/Applications/Xcode.app/Contents/Applications/iPhone Simulator.app" "/Applications/iOS Simulator.app"
@@ -259,6 +266,9 @@ sudo chmod 600 /System/Library/CoreServices/Search.bundle/Contents/MacOS/Search
 
 echo "Spotlight - Disable indexing for any volume that gets mounted and has not yet"
 sudo defaults write /.Spotlight-V100/VolumeConfiguration Exclusions -array "/Volumes"
+
+echo "Disable Photos.app from starting everytime a device is plugged in"
+defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 
 printf "Printer - Expand print panel by default\n"
 defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
