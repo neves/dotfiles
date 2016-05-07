@@ -105,6 +105,9 @@ defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 printf "Keyboard - Set a fast keyboard repeat rate\n"
 defaults write NSGlobalDomain KeyRepeat -int 0
 
+printf "Keyboard - Set a fast keyboard start repeat\n"
+defaults write NSGlobalDomain InitialKeyRepeat -int 10
+
 printf "Keyboard - Disable press-and-hold for keys in favor of key repeat\n"
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 
