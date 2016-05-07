@@ -7,21 +7,22 @@ curl https://raw.githubusercontent.com/neves/dotfiles/master/osx_defaults.sh | s
 
 # install brew and Xcode-Tools + Git (5min) Click Install and accept Terms on new screen
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-brew doctor
+
 # http://caskroom.io/
-brew install caskroom/cask/brew-cask wget
-brew update
 # add beta versions of softwares: https://github.com/caskroom/homebrew-versions
+brew doctor
+brew tap caskroom/cask
 brew tap caskroom/versions
-# Brewfile like Gemfile: https://github.com/Homebrew/homebrew-bundle
 brew tap Homebrew/bundle
+
+brew update
 
 # ......................................................................................................................
 # DropBox
 #.......................................................................................................................
 
-brew cask install dropbox
 # configurar para baixar apenas a pasta osx
+brew cask install dropbox
 open -a Dropbox
 
 # ......................................................................................................................
