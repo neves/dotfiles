@@ -1,3 +1,5 @@
+alias markright="open -a ~/Applications/MarkRight.app"
+
 # try inflections in console
 alias pry-inflections="pry -f -r'active_support/inflector' -r'./config/initializers/inflections'"
 

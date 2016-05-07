@@ -11,8 +11,15 @@ source $HERE/preztorc.zsh
 # load zmv batch renamer
 autoload -U zmv
 
-# initialize rbenv (hehash is slow)
-[[ $(which rbenv) ]] && eval "$(rbenv init - --no-rehash)"
+# prefer chruby over rbenv
+if [[ $(which chruby) ]]
+then
+  source /usr/local/opt/chruby/share/chruby/chruby.sh
+  source /usr/local/share/chruby/auto.sh
+else
+  # initialize rbenv (hehash is slow)
+  [[ $(which rbenv) ]] && eval "$(rbenv init - --no-rehash)"
+fi
 
 # initialize direnv
 [[ $(which direnv) ]] && eval "$(direnv hook zsh)"

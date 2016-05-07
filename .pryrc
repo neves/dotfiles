@@ -44,14 +44,15 @@ Pry.config.prompt = [
 
 ActiveRecord::Base.logger = Logger.new(STDOUT) if ENV['RAILS_ENV']
 
+# DEPRECATED: utilizar pry-pretty-numeric
 # Add thousand separator to big numbers: 1234567890.12 => "1_234_567_890.12"
-module NumericThousandSeparator
-  def to_sf
-      to_s.reverse.gsub(/(\d{3})\B/, '\1_').reverse
-  end
-end
+# module NumericThousandSeparator
+#   def to_sf
+#       to_s.reverse.gsub(/(\d{3})\B/, '\1_').reverse
+#   end
+# end
 
-Numeric.include NumericThousandSeparator
+# Numeric.include NumericThousandSeparator
 
 puts '~/.pryrc loaded!'
 

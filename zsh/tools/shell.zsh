@@ -36,6 +36,12 @@ pathadd() {
     fi
 }
 
+path-prepend() {
+  if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
+      PATH="$1:${PATH+"$PATH"}"
+  fi
+}
+
 alias addpath=pathadd
 
 alias paths='echo $PATH | tr ":" "\n"'
@@ -67,6 +73,18 @@ count_files() {
   do
     ls -1 "$f" | wc -l
   done
+}
+
+iso2img() {
+  name=$(basename $1 .iso)
+  hdiutil convert $1 -format UDRW -o $name;
+  mv $name.dmg $name.img
+}
+
+img2iso() {
+  name=$(basename $1 .img)
+  hdiutil convert $1 -format UDTO -o $name;
+  mv $name.cdr $name.iso
 }
 
 # mv files from folder to parent and remove folder

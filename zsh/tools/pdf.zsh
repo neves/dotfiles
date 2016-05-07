@@ -1,3 +1,7 @@
+function colorspace() {
+  identify -verbose "$1[0]" | grep Colorspace
+}
+
 gs-trimbox() {
   \gs -sDEVICE=pdfwrite -dBATCH -dNOPAUSE -dColorConversionStrategy=/RGB -dUseTrimBox -sOutputFile="$2" "$1"
 }
@@ -19,11 +23,16 @@ pdf-remove-page() {
 pdf-cmyk2rgb() {
   if [ $# -lt 1 ]
   then
-    echo 'Usage: pdf-cmyk2rgb file.pdf'
+    echo 'Usage: pdf-cmyk2rgb file.pdf [<output>]'
     return
   fi
-  \gs -sDEVICE=pdfwrite -dBATCH -dNOPAUSE -dColorConversionStrategy=/RGB -dUseTrimBox -sOutputFile="$1.rgb.pdf" "$1"
+  output=${2:-"$1.rgb.pdf"}
+  gs -dUseTrimBox -dCompatibilityLevel=1.7 -dNOTRANSPARENCY \
+     -dColorConversionStrategy=/sRGB -dProcessColorModel=/DeviceRGB -dColorConversionStrategyForImages=/DeviceRGB \
+     -sDEVICE=pdfwrite -dBATCH -dNOPAUSE -sstdout=%stderr -sOutputFile="$output" "$1"
 }
+
+# OLD SCRIPTS ==========================================================================================================
 
 # converte pdf em ps e novamente em pdf para reduzir o tamanho
 # NÃO EXIBE ACENTOS!

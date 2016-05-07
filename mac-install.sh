@@ -38,6 +38,8 @@ brew install caskroom/cask/brew-cask wget
 brew update
 # add beta versions of softwares: https://github.com/caskroom/homebrew-versions
 brew tap caskroom/versions
+# Brewfile like Gemfile: https://github.com/Homebrew/homebrew-bundle
+brew tap Homebrew/bundle
 
 # ......................................................................................................................
 # DropBox
@@ -136,7 +138,7 @@ curl -L https://github.com/mkalmes/brewupdate/raw/develop/brewupdate-install.sh 
 brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json quicklook-csv
 # quicklook images
 brew cask install qlimagesize webpquicklook animated-gif-quicklook
-brew cask install qlprettypatch betterzipql suspicious-package
+brew cask install qlprettypatch betterzipql suspicious-package provisionql
 
 # ......................................................................................................................
 # brew install
@@ -146,7 +148,7 @@ brew cask install qlprettypatch betterzipql suspicious-package
 brew install ssh-copy-id sqlite3 entr fasd coreutils gnu-sed git-imerge the_silver_searcher # ag
 
 # essential tools
-brew cask install google-chrome firefox evernote rowanj-gitx sourcetree sequel-pro lightpaper cheatsheet jumpcut #clipboard history
+brew cask install google-chrome firefox evernote rowanj-gitx sourcetree sequel-pro lightpaper cheatsheet flycut #clipboard history
 open -a CheatSheet # keyboard shortcut holding CMD
 open -a 'Google Chrome' # Ligar Avisar Antes de Sair CMD+Q
 open -a Evernote
@@ -168,6 +170,27 @@ open -a Dash
 # window shortcuts
 brew cask install spectacle
 open -a Spectacle
+
+# https://getbitbar.com
+# Plugins para exibir informações na barra superior menubar
+# plugins na pasta do Dropbox/osx/bitbar-plugins
+brew cask install bitbar
+open -a BitBar
+# Semelhantes:
+# https://github.com/jaredks/rumps
+# https://github.com/tonsky/AnyBar
+# https://github.com/ttscoff/AnyBar (color+text)
+# http://www.richsomerfield.com/apps/ (Textbar)
+# https://github.com/HackPlan/quark-shell-mac (apps mais complexas com html/js)
+
+# https://github.com/jpmens/jo
+brew install jo
+
+# https://github.com/micha/json-table
+cd ~/Downloads
+git clone https://github.com/micha/json-table.git
+cd json-table
+make && sudo make install
 
 # ......................................................................................................................
 # RUBY
@@ -248,6 +271,11 @@ easy_install pip
 pip install slugify
 # pygmentize file # to syntax highlight on command line
 pip install pygments
+pip install speedtest-cli
+
+# See what a program does before deciding whether you really want it to happen
+# https://github.com/p-e-w/maybe
+pip install maybe
 
 # ......................................................................................................................
 # Sublime Linters
@@ -261,7 +289,7 @@ gem install slim_lint
 # PDF
 # ......................................................................................................................
 
-# /usr/local/Cellar/poppler/0.36.0/bin/pdfinfo and others
+# /usr/local/Cellar/poppler/0.42.0/bin/pdfinfo and others
 brew install poppler
 # CPDF
 wget -O /usr/local/bin/cpdf http://github.com/coherentgraphics/cpdf-binaries/raw/master/OSX-Intel/cpdf
@@ -297,11 +325,14 @@ open -a Genymotion
 # Clicar em play para iniciar o emulador
 # cordova run # para rodar no emulador, que para o cordova será como um dispositivo real
 
+
 # ......................................................................................................................
 # OTHER TOOLS
 # ......................................................................................................................
 
+
 # https://github.com/mhagger/git-imerge
+
 
 # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 # OPTIONAL
@@ -340,7 +371,12 @@ brew cask install psequel
 brew cask install --appdir=/Applications postgres
 
 # Editar Markdown
-https://github.com/minodisk/markn
+# https://github.com/minodisk/markn (no brew, apenas visualizador, sem editor, preferir o abaixo)
+brew cask install markright
+alias markright="open -a ~/Applications/MarkRight.app"
+
+# Editor markdown com inline preview (versão no brew desatualizada)
+# https://github.com/brrd/Abricotine/releases
 
 # DB Manager: http://www.valentina-db.com/en/valentina-studio-overview
 brew cask install valentina-studio

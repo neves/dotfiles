@@ -1,8 +1,3 @@
-
-function colorspace() {
-  identify -verbose "$1[0]" | grep Colorspace
-}
-
 image_size() {
   for f in $*
   do
