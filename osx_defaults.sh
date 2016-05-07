@@ -39,7 +39,7 @@ defaults write NSGlobalDomain AppleFontSmoothing -int 2
 sudo defaults write /Library/Preferences/com.apple.windowserver DisplayResolutionEnabled -bool true
 
 echo "Config PHP"
-echo 'date.timezone = America/Sao_Paulo' > /etc/php.ini
+echo 'date.timezone = America/Sao_Paulo' | sudo tee /etc/php.ini
 
 echo "Disable dashboard widgets (saves RAM)"
 defaults write com.apple.dashboard mcx-disabled -boolean YES
