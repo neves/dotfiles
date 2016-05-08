@@ -81,6 +81,7 @@ brew icdiff # colored diff side by side http://www.jefftk.com/icdiff
 # cask ibettercharge # avisa quando a bateria do celular estiver acabando
 # cask audioslicer # separar capítulos de audiobooks
 # brew sqlitebrowser
+# cask coconutbattery
 
 # brew mysql
 # automatic start
