@@ -1,3 +1,5 @@
+# simulate gdate
+type gdate >/dev/null 2>&1 || function gdate() { date $1 | cut -c 1-11 }
 ts=$(gdate +%s%3N) # medir o tempo para carregar este script. Precisa instalar brew install coreutils
 #-----------------------------------------------------------------------------------------------------------------------
 
@@ -12,17 +14,17 @@ source $HERE/preztorc.zsh
 autoload -U zmv
 
 # prefer chruby over rbenv
-if [[ $(which chruby) ]]
+if [ -f /usr/local/share/chruby/chruby.sh ]
 then
-  source /usr/local/opt/chruby/share/chruby/chruby.sh
+  source /usr/local/share/chruby/chruby.sh
   source /usr/local/share/chruby/auto.sh
 else
   # initialize rbenv (hehash is slow)
-  [[ $(which rbenv) ]] && eval "$(rbenv init - --no-rehash)"
+  type rbenv >/dev/null 2>&1 && eval "$(rbenv init - --no-rehash)"
 fi
 
 # initialize direnv
-[[ $(which direnv) ]] && eval "$(direnv hook zsh)"
+type direnv >/dev/null 2>&1 && eval "$(direnv hook zsh)"
 
 # initialize autoenv
 # source $(brew --prefix autoenv)/activate.sh
@@ -33,7 +35,7 @@ source $HERE/tools/pdf.zsh
 source $HERE/tools/media.zsh
 source $HERE/tools/shell.zsh
 source $HERE/git.zsh
-source $HERE/fasd.zsh
+type fasd >/dev/null 2>&1 && source $HERE/fasd.zsh
 
 # inicializar docker VM fora deste script para não ficar lento
 alias docker-boot="source /Applications/Docker/Docker\ Quickstart\ Terminal.app/Contents/Resources/Scripts/start.sh"
