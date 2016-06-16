@@ -9,7 +9,7 @@ brew doctor
 brew update
 
 # neves/dotfiles
-git clone git@github.com:neves/dotfiles.git ~/dotfiles
+git clone https://github.com/neves/dotfiles.git ~/dotfiles
 ln -s $HOME/dotfiles/gitconfig $HOME/.gitconfig
 ln -s $HOME/dotfiles/gitconfig.user $HOME/.gitconfig.user
 ln -s $HOME/dotfiles/.pryrc $HOME/.pryrc
