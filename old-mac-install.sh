@@ -286,9 +286,6 @@ brew cask install --appdir=/Applications postgres
 brew cask install markright
 alias markright="open -a ~/Applications/MarkRight.app"
 
-# Editor markdown com inline preview (versão no brew desatualizada)
-# https://github.com/brrd/Abricotine/releases
-
 # DB Manager: http://www.valentina-db.com/en/valentina-studio-overview
 brew cask install valentina-studio
 

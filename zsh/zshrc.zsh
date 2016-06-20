@@ -9,44 +9,24 @@ DOTFILES=$(dirname $HERE)
 # choose oh-my-zsh or prezto, NEVER BOTH
 # source $HERE/oh-my-zsh-rc.zsh
 source $HERE/preztorc.zsh
-
 # load zmv batch renamer
 autoload -U zmv
-
-# prefer chruby over rbenv
-if [ -f /usr/local/share/chruby/chruby.sh ]
-then
-  source /usr/local/share/chruby/chruby.sh
-  source /usr/local/share/chruby/auto.sh
-else
-  # initialize rbenv (hehash is slow)
-  type rbenv >/dev/null 2>&1 && eval "$(rbenv init - --no-rehash)"
-fi
 
 # initialize direnv
 type direnv >/dev/null 2>&1 && eval "$(direnv hook zsh)"
 
-# initialize autoenv
-# source $(brew --prefix autoenv)/activate.sh
-
+source $HERE/ruby.zsh
 source $HERE/env.zsh
 source $HERE/tools.zsh
 source $HERE/tools/pdf.zsh
 source $HERE/tools/media.zsh
 source $HERE/tools/shell.zsh
 source $HERE/git.zsh
-type fasd >/dev/null 2>&1 && source $HERE/fasd.zsh
+source $HERE/nvm.zsh # Node Version Manager
+source $HERE/gcloud.zsh # Google Cloud/AppEngine
+type fasd >/dev/null 2>&1 && source $HERE/fasd.zsh # z jump
 
-# inicializar docker VM fora deste script para não ficar lento
-alias docker-boot="source /Applications/Docker/Docker\ Quickstart\ Terminal.app/Contents/Resources/Scripts/start.sh"
-# definir variáveis de ambiente para o comando docker funcionar
-alias docker-env='eval "$(docker-machine env default)"'
-
-# lista os npm instalados globalmente
-alias npmglist='npm list -depth 0 -g | \grep @'
-
-# utiliza versao gnu dos comandos nativos do mac, como date.
-alias gnupath='addpath /usr/local/opt/coreutils/libexec/gnubin'
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh # fuzzy terminal search
 
 #-----------------------------------------------------------------------------------------------------------------------
 te=$(gdate +%s%3N) # exibir o tempo levado em segundos

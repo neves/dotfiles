@@ -1,5 +1,5 @@
 [core]
-  excludesfile = ~/.gitignore
+	excludesfile = /Users/neves/.gitignore_global
   editor = subl -w
   eol = lf
 
@@ -95,3 +95,7 @@
 [mergetool "sourcetree"]
 	cmd = /opt/homebrew-cask/Caskroom/sourcetree/2.2.4/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	required = true

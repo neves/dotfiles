@@ -6,7 +6,7 @@ alias gt="git status -s"
 
 # utilizar alias gs apenas se não estiver instalado o GhostScript
 unalias gs &> /dev/null
-[[ $(which gs) ]] || alias gs="git status"
+[[ $(which gs) ]] || alias gs="git status -s"
 
 unalias gc &> /dev/null
 gc() { noglob git commit -m "$*" && git status }

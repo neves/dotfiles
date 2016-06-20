@@ -25,6 +25,7 @@ tap 'caskroom/fonts'
 # essential
 brew wget
 brew zsh
+brew fzf # (find . | fzf) https://github.com/junegunn/fzf
 brew ssh-copy-id # easy copy ssh id to remote server
 brew sqlite3
 brew entr # Run arbitrary commands when files change http://entrproject.org/
@@ -33,10 +34,10 @@ brew coreutils # gnu
 brew gnu-sed
 brew git-imerge
 brew the_silver_searcher # ag
-brew chruby # melhor que rbenv
-brew 'ruby-install' # melhor que ruby-build
 brew direnv
 brew heroku
+brew chruby # melhor que rbenv
+brew 'ruby-install' # melhor que ruby-build
 
 # https://github.com/chrissimpkins/Hack
 # https://sourcefoundry.org/hack/playground.html
@@ -56,6 +57,7 @@ cask flycut # clipboard history
 cask vlc
 cask subtitle-master
 cask transmission
+cask atom
 cask dash # license.dash-license no DropBox/osx
 cask flux # amarelar a tela de noite
 # default application used for various URL schemes, file extensions, file types, MIME types
@@ -63,6 +65,7 @@ cask rcdefaultapp
 cask megasync, args: { appdir: '/Applications' }
 cask postgres, args: { appdir: '/Applications' }
 cask psequel
+
 # cask install box-sync
 # cask install cheatsheet && open -a CheatSheet # keyboard shortcut holding CMD
 # brew lightpaper # agora é pago
@@ -74,6 +77,7 @@ brew ffmpeg
 brew youtube-dl
 brew mosh # ssh persistente
 brew icdiff # colored diff side by side http://www.jefftk.com/icdiff
+# brew mas # Apple Store cli: mas search Xcode, mas install 497799835
 
 # OPCIONAIS
 

@@ -28,6 +28,9 @@ rm -rf chruby-*
 
 echo 'gem: --no-ri --no-rdoc -V' > ~/.gemrc
 
+# sqlite ruby dependencies
+sudo apt-get -y install libsqlite3-dev
+
 # Add to ~/.zshrc e reiniciar terminal
 # if [ -n "$BASH_VERSION" ] || [ -n "$ZSH_VERSION" ]; then
 #   source /usr/local/share/chruby/chruby.sh
@@ -41,9 +44,9 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/linuxbrew/go/i
 sudo apt-get -y install m4
 
 # nvm: node version manager
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.1/install.sh | bash
 # restart terminal
-nvm install v4
+nvm install v6
 npm install -g local-npm
 
 # cache rubygems

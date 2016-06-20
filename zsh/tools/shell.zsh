@@ -1,3 +1,13 @@
+# ip local da máquina
+alias ip-local="ipconfig getifaddr $(ifconfig | grep ^en | head -n1 | cut -d: -f1)"
+# ip remoto
+alias ip-remote="dig +short myip.opendns.com @resolver1.opendns.com"
+# nome do wifi
+function wifi-name() {
+  /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I \
+  | awk '/ SSID/ {print substr($0, index($0, $2))}'
+}
+
 # duplicate file in path with new name:
 # Usage: duplicate path/to/file new-name
 function duplicate(){ cp -r $1 "${1:h}/$2" }
@@ -53,7 +63,8 @@ function f() { find . -iname "*$1*" ${@:2} }
 
 lw() { l $(which $1); }
 
-bkp() { mv "$1" "$1.bak"; lw "$1.bak"; }
+bkp() { mv "$1" "$1.bak"; }
+bkp-undo() { mv "$1.bak" "$1"; }
 
 # findBySize . +100MB
 findBySize() {

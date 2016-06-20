@@ -1,3 +1,14 @@
+# inicializar docker VM fora deste script para não ficar lento
+alias docker-boot="source /Applications/Docker/Docker\ Quickstart\ Terminal.app/Contents/Resources/Scripts/start.sh"
+# definir variáveis de ambiente para o comando docker funcionar
+alias docker-env='eval "$(docker-machine env default)"'
+
+# lista os npm instalados globalmente
+alias npmglist='npm list -depth 0 -g | \grep @'
+
+# utiliza versao gnu dos comandos nativos do mac, como date.
+alias gnupath='addpath /usr/local/opt/coreutils/libexec/gnubin'
+
 alias markright="open -a ~/Applications/MarkRight.app"
 
 # try inflections in console
@@ -38,9 +49,6 @@ alias pry="pry --no-plugins"
 
 # parse yml file
 alias yml="ruby -e \"require 'yaml'; require 'pp';  pp YAML.load_file ARGV[0]\""
-
-# executar um arquivo .nw ou um diretório
-alias nw="/opt/homebrew-cask/Caskroom/node-webkit/0.10.5/node-webkit-v0.10.5-osx-x64/node-webkit.app/Contents/MacOS/node-webkit"
 
 # rails template: rt nome-da-receita
 rt() {
