@@ -2,7 +2,8 @@
 if [ -f /usr/local/share/chruby/chruby.sh ]
 then
   source /usr/local/share/chruby/chruby.sh
-  source /usr/local/share/chruby/auto.sh
+  # source /usr/local/share/chruby/auto.sh
+  chruby ruby
   [ -f /usr/local/share/gem_home/gem_home.sh ] && source /usr/local/share/gem_home/gem_home.sh
 else
   # initialize rbenv (without hehash because it's slow)
