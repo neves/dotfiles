@@ -45,7 +45,7 @@ cask font-hack
 
 cask dropbox
 cask iterm2-beta # http://iterm2.com/version3.html
-cask sublime-text3
+cask sublime-text
 cask google-chrome
 cask firefox
 cask evernote
@@ -78,6 +78,8 @@ brew youtube-dl
 brew mosh # ssh persistente
 brew icdiff # colored diff side by side http://www.jefftk.com/icdiff
 # brew mas # Apple Store cli: mas search Xcode, mas install 497799835
+brew pgcli
+brew mycli
 
 # OPCIONAIS
 
