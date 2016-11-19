@@ -6,3 +6,4 @@ d75bc582014905ed3ee57f009fa8b85481e9fa5d 3d74affee819a6f621700f153759d823f448a00
 3d74affee819a6f621700f153759d823f448a002 3cf93333dacc1ad093c5ece93dc126bfa1bd5bb9 Marcos Neves <marcos.neves@gmail.com> 1479529532 -0200	commit: ignore nvm
 3cf93333dacc1ad093c5ece93dc126bfa1bd5bb9 8c077b9d7b4e1b983ea2d751cd3ac39dd115da34 Marcos Neves <marcos.neves@gmail.com> 1479530567 -0200	commit: config yarn
 8c077b9d7b4e1b983ea2d751cd3ac39dd115da34 f49d788013419c5aacfa3609729aa2b0da63488c Marcos Neves <marcos.neves@gmail.com> 1479531524 -0200	commit: yarn
+f49d788013419c5aacfa3609729aa2b0da63488c a20de0d25b97f459053a6a498d67d4e057b30deb Marcos Neves <marcos.neves@gmail.com> 1479532195 -0200	commit: ignore /.config/configstore/
