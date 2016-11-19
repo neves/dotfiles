@@ -65,7 +65,7 @@ cask rcdefaultapp
 cask megasync, args: { appdir: '/Applications' }
 cask postgres, args: { appdir: '/Applications' }
 cask psequel
-
+cask intel-power-gadget
 # cask install box-sync
 # cask install cheatsheet && open -a CheatSheet # keyboard shortcut holding CMD
 # brew lightpaper # agora é pago

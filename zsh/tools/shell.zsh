@@ -2,6 +2,10 @@
 alias ip-local="ipconfig getifaddr $(ifconfig | grep ^en | head -n1 | cut -d: -f1)"
 # ip remoto
 alias ip-remote="dig +short myip.opendns.com @resolver1.opendns.com"
+
+# opened server ports
+alias ports="netstat -an -f inet -p tcp | grep LISTEN"
+
 # nome do wifi
 function wifi-name() {
   /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I \

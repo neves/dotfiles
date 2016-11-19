@@ -39,7 +39,7 @@ git clone --recursive https://github.com/sorin-ionescu/prezto.git ~/.zprezto
 
 # RUBY
 
-ruby-install ruby
+ruby-install ruby -- --disable-install-rdoc
 echo 'gem: --no-ri --no-rdoc -V' > ~/.gemrc
 echo 'ruby-2.3.1' > ~/.ruby-version
 source ~/.zshrc
@@ -50,7 +50,7 @@ brew install --HEAD https://raw.github.com/postmodern/gem_home/master/homebrew/g
 
 # NVM NODE NPM
 
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.2/install.sh | bash
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash
 source ~/.zshrc
 nvm install stable
 npm install -g npm

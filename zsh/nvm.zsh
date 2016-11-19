@@ -5,8 +5,8 @@ export NVM_DIR="$HOME/.nvm"
 # quando for utilizar o node, executar:
 # nvm use node
 # https://github.com/creationix/nvm/issues/860
-# load node and npm only whem used for the first time
 
+# load node and npm only whem used for the first time
 if [ ! $(type node >/dev/null) ]
 then
   alias node='unalias node npm && nvm use node && node'
