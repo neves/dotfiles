@@ -38,6 +38,7 @@ brew direnv
 brew heroku
 brew chruby # melhor que rbenv
 brew 'ruby-install' # melhor que ruby-build
+brew yarn # força instalar o node global
 
 # https://github.com/chrissimpkins/Hack
 # https://sourcefoundry.org/hack/playground.html

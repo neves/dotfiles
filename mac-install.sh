@@ -54,6 +54,7 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | b
 source ~/.zshrc
 nvm install stable
 npm install -g npm
+npm install -g yarn
 
 # PDF
 

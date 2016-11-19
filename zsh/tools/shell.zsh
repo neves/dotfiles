@@ -6,6 +6,9 @@ alias ip-remote="dig +short myip.opendns.com @resolver1.opendns.com"
 # opened server ports
 alias ports="netstat -an -f inet -p tcp | grep LISTEN"
 
+# roda git no $HOME
+alias gh='GIT_DIR=$HOME/dotfiles/home.git git'
+
 # nome do wifi
 function wifi-name() {
   /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I \
