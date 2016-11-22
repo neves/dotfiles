@@ -7,3 +7,8 @@ d75bc582014905ed3ee57f009fa8b85481e9fa5d 3d74affee819a6f621700f153759d823f448a00
 3cf93333dacc1ad093c5ece93dc126bfa1bd5bb9 8c077b9d7b4e1b983ea2d751cd3ac39dd115da34 Marcos Neves <marcos.neves@gmail.com> 1479530567 -0200	commit: config yarn
 8c077b9d7b4e1b983ea2d751cd3ac39dd115da34 f49d788013419c5aacfa3609729aa2b0da63488c Marcos Neves <marcos.neves@gmail.com> 1479531524 -0200	commit: yarn
 f49d788013419c5aacfa3609729aa2b0da63488c a20de0d25b97f459053a6a498d67d4e057b30deb Marcos Neves <marcos.neves@gmail.com> 1479532195 -0200	commit: ignore /.config/configstore/
+a20de0d25b97f459053a6a498d67d4e057b30deb bdb221cedab5ecae95c0d808a38790bd61f27bcc Marcos Neves <marcos.neves@gmail.com> 1479533391 -0200	commit: ignore npm and .atom
+bdb221cedab5ecae95c0d808a38790bd61f27bcc 5b4422f107c292cd5fe4c3195ffb249f2f711738 Marcos Neves <marcos.neves@gmail.com> 1479570044 -0200	commit: GAE
+5b4422f107c292cd5fe4c3195ffb249f2f711738 fa9d3bdf7c66492acf69447d29b1b5ed41421b99 Marcos Neves <marcos.neves@gmail.com> 1479570112 -0200	commit: direnv
+fa9d3bdf7c66492acf69447d29b1b5ed41421b99 039f2a6849c9341cf024379c1d36a51bef39143d Marcos Neves <marcos.neves@gmail.com> 1479570306 -0200	commit: heroku
+039f2a6849c9341cf024379c1d36a51bef39143d 10e0b62910e1c6ba7fa42e87283cc0e1fa402f6c Marcos Neves <marcos.neves@gmail.com> 1479814829 -0200	commit: .node_repl_history

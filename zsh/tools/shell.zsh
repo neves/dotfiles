@@ -9,6 +9,11 @@ alias ports="netstat -an -f inet -p tcp | grep LISTEN"
 # roda git no $HOME
 alias gh='GIT_DIR=$HOME/dotfiles/home.git git'
 
+# fuzzy search node_modules, npm node_modules global and yarn
+alias fn="ls -1 ./node_modules | fzf -e --reverse"
+alias fng="ls -1 /usr/local/lib/node_modules | fzf -e --reverse"
+alias fy="ls -1 ~/.config/yarn/global/node_modules | fzf -e --reverse"
+
 # nome do wifi
 function wifi-name() {
   /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I \
