@@ -7,7 +7,7 @@ alias ip-remote="dig +short myip.opendns.com @resolver1.opendns.com"
 alias ports="netstat -an -f inet -p tcp | grep LISTEN"
 
 # roda git no $HOME
-alias gh='GIT_DIR=$HOME/dotfiles/home.git git'
+alias gh='GIT_DIR=$HOME/Dropbox/osx/home.git git'
 
 # fuzzy search node_modules, npm node_modules global and yarn
 alias fn="ls -1 ./node_modules | fzf -e --reverse"
