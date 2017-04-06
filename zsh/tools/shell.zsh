@@ -1,3 +1,8 @@
+# show latest npm package version
+function npmv() {
+  curl "https://api.npms.io/v2/package/$1" 2&> /dev/null | jq '.collected.metadata.version'
+}
+
 # ip local da máquina
 alias ip-local="ipconfig getifaddr $(ifconfig | grep ^en | head -n1 | cut -d: -f1)"
 # ip remoto

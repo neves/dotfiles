@@ -24,3 +24,11 @@ center-image() {
 trim-silence() {
   sox $1 $2 silence 1 0.1 1% reverse silence 1 0.1 1% reverse
 }
+
+ffmpeg-info() {
+  ffprobe -hide_banner -i "$1" 2>&1 | grep -E '(Audio|Video):'
+}
+
+ffmpeg-dts2aac() {
+  ffmpeg -hide_banner -i "$1" -map 0 -c copy -c:a aac "$2"
+}
