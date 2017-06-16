@@ -4,7 +4,7 @@ function npmv() {
 }
 
 # ip local da máquina
-alias ip-local="ipconfig getifaddr $(ifconfig | grep ^en | head -n1 | cut -d: -f1)"
+alias ip-local="ipconfig getifaddr $(ifconfig | pcregrep -M -o '^[^\t:]+:([^\n]|\n\t)*status: active' | egrep -o -m 1 '^[^\t:]+')"
 # ip remoto
 alias ip-remote="dig +short myip.opendns.com @resolver1.opendns.com"
 
