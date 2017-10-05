@@ -39,6 +39,8 @@ git clone --recursive https://github.com/sorin-ionescu/prezto.git ~/.zprezto
 
 # RUBY
 
+# list latest ruby versions
+ruby-install -L
 ruby-install ruby -- --disable-install-rdoc
 echo 'gem: --no-ri --no-rdoc -V' > ~/.gemrc
 echo 'ruby-2.3.1' > ~/.ruby-version
