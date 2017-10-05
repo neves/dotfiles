@@ -1,3 +1,5 @@
+alias rm-node_modules="find .  -name 'node_modules' -print -type d -prune -exec rm -rf '{}' +"
+
 # show latest npm package version
 function npmv() {
   curl "https://api.npms.io/v2/package/$1" 2&> /dev/null | jq '.collected.metadata.version'
