@@ -18,7 +18,7 @@
   # http://durdn.com/blog/2012/11/22/must-have-git-aliases-advanced-examples/
   # https://github.com/evbogue/git-aliases/blob/master/bash_aliases
   # https://github.com/michel-kraemer/gitaliases/blob/master/gitaliases.sh
-
+  up = pull --rebase --autostash
   s = status -s
   c = commit -m
   # commit after merge
@@ -91,7 +91,7 @@
 	keepBackup = false
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /opt/homebrew-cask/Caskroom/sourcetree/2.2.4/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
