@@ -45,7 +45,7 @@ brew yarn # força instalar o node global
 cask font-hack
 
 cask dropbox
-cask iterm2-beta # http://iterm2.com/version3.html
+cask iterm2 # http://iterm2.com/version3.html
 cask sublime-text
 cask google-chrome
 cask firefox
@@ -60,17 +60,17 @@ cask subtitle-master
 cask transmission
 cask atom
 cask dash # license.dash-license no DropBox/osx
-cask flux # amarelar a tela de noite
-# default application used for various URL schemes, file extensions, file types, MIME types
-cask rcdefaultapp
-cask megasync, args: { appdir: '/Applications' }
+# cask flux # amarelar a tela de noite, nao precisa no Sierra
 cask postgres, args: { appdir: '/Applications' }
 cask psequel
 cask intel-power-gadget
+# cask megasync, args: { appdir: '/Applications' }
 # cask install box-sync
 # cask install cheatsheet && open -a CheatSheet # keyboard shortcut holding CMD
 # brew lightpaper # agora é pago
 
+# default application used for various URL schemes, file extensions, file types, MIME types
+cask rcdefaultapp
 brew duti # configurar qual app abre qual extensão
 brew imagemagick
 brew ghostscript
@@ -82,6 +82,11 @@ brew icdiff # colored diff side by side http://www.jefftk.com/icdiff
 brew pgcli
 brew mycli
 
+brew mysql
+# automatic start
+# ln -sfv /usr/local/opt/mysql/*.plist ~/Library/LaunchAgents
+# mysql.server start # manual start
+
 # OPCIONAIS
 
 # brew sox # command line audio editing
@@ -90,11 +95,6 @@ brew mycli
 # brew sqlitebrowser
 # cask coconutbattery
 
-# brew mysql
-# automatic start
-# ln -sfv /usr/local/opt/mysql/*.plist ~/Library/LaunchAgents
-# mysql.server start # manual start
-
 ENV['AT_EXIT'] && at_exit do
   `open -a Dropbox`
   `open -a iTerm`
@@ -102,9 +102,6 @@ ENV['AT_EXIT'] && at_exit do
   `open -a Evernote`
   `open -a Flycut`
   `open -a Spectacle`
-  `open -a Dash`
-  `open -a flux`
-  `open -a Megasync`
 
   # mkdir -p ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/
   # ln -fs ~/Dropbox/osx/sublime3 ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
