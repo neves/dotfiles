@@ -1,12 +1,11 @@
 
 curl https://raw.githubusercontent.com/neves/dotfiles/master/osx_defaults.sh | sudo bash
+# Logout/Login to apply
 
 # HomeBrew
 
 # install brew and Xcode-Tools + Git (5min) Click Install and accept Terms on new screen
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-brew doctor
-brew update
 
 # neves/dotfiles
 git clone https://github.com/neves/dotfiles.git ~/dotfiles
@@ -30,12 +29,15 @@ curl -L https://github.com/mkalmes/brewupdate/raw/develop/brewupdate-install.sh 
 
 # link .ssh
 [ "$SHELL" = "/bin/zsh" ] || chsh -s /bin/zsh
-ln -fs ~/Dropbox/osx/ssh ~/.ssh
+ln -fs ~/osx/ssh ~/.ssh
 chmod go-rwx .ssh/*
-ln -sf ~/Dropbox/osx/zsh/.zsh_history ~/.zsh_history
+ln -sf ~/osx/zsh/.zhistory-air ~/.zhistory
 
 # prezto
 git clone --recursive https://github.com/sorin-ionescu/prezto.git ~/.zprezto
+
+brew doctor
+brew update
 
 # RUBY
 
@@ -43,10 +45,11 @@ git clone --recursive https://github.com/sorin-ionescu/prezto.git ~/.zprezto
 ruby-install -L
 ruby-install ruby -- --disable-install-rdoc
 echo 'gem: --no-ri --no-rdoc -V' > ~/.gemrc
-echo 'ruby-2.3.1' > ~/.ruby-version
+echo 'ruby-2.4.3' > ~/.ruby-version
 source ~/.zshrc
 gem install rails git-up
-heroku
+heroku auth:login
+
 # gemset
 brew install --HEAD https://raw.github.com/postmodern/gem_home/master/homebrew/gem_home.rb
 
