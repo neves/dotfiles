@@ -59,7 +59,7 @@ cask vlc
 cask subtitle-master
 cask transmission
 cask atom
-cask dash # license.dash-license no DropBox/osx
+cask dash3 # license.dash-license no DropBox/osx
 # cask flux # amarelar a tela de noite, nao precisa no Sierra
 cask postgres, args: { appdir: '/Applications' }
 cask psequel
