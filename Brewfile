@@ -68,6 +68,7 @@ cask intel-power-gadget
 # cask install box-sync
 # cask install cheatsheet && open -a CheatSheet # keyboard shortcut holding CMD
 # brew lightpaper # agora é pago
+cask visual-studio-code
 
 # default application used for various URL schemes, file extensions, file types, MIME types
 cask rcdefaultapp
