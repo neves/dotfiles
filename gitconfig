@@ -1,5 +1,8 @@
+[include]
+  path = ~/.gitconfig.user
+
 [core]
-	excludesfile = ~/.gitignore_global
+  excludesfile = ~/.gitignore_global
   editor = subl -w
   eol = lf
 
@@ -82,20 +85,18 @@
 [pull]
   rebase = true
 
-[include]
-  path = ~/.gitconfig.user
 [merge]
-	tool = p4merge
+  tool = p4merge
 [mergetool]
-	prompt = false
-	keepBackup = false
+  prompt = false
+  keepBackup = false
 [difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path =
+  cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+  path =
 [mergetool "sourcetree"]
-	cmd = /opt/homebrew-cask/Caskroom/sourcetree/2.2.4/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+  cmd = /opt/homebrew-cask/Caskroom/sourcetree/2.2.4/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+  trustExitCode = true
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  required = true

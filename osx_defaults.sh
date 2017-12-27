@@ -2,148 +2,67 @@
 
 # curl https://raw.githubusercontent.com/neves/dotfiles/master/osx_defaults.sh | bash
 
-# sources: https://mths.be/osx, https://gist.github.com/brandonb927/3195465/
-
-# MANUAL: configurar trackpad, acessibilidade arrastar com 3 dedos e spotlight
+# https://github.com/herrbischoff/awesome-osx-command-line/blob/master/README.md
 
 clear
 
-printf "System - Expand save panel by default\n"
-defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
-
-printf "System - Disable the 'Are you sure you want to open this application?' dialog\n"
-defaults write com.apple.LaunchServices LSQuarantine -bool false
-
-printf "System - Increase window resize speed for Cocoa applications\n"
-defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
-
-printf "System - Disable smart quotes (not useful when writing code)\n"
-defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
-
-printf "System - Disable smart dashes (not useful when writing code)\n"
-defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
-
-printf "System - Avoid creating .DS_Store files on network volumes\n"
-defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
-
-printf "Keyboard - Enable keyboard access for all controls\n"
+# Keyboard - Set a fast keyboard repeat rate
+defaults write NSGlobalDomain KeyRepeat -int 1
+# Keyboard - Set a fast keyboard start repeat
+defaults write NSGlobalDomain InitialKeyRepeat -int 10
+# Keyboard - Disable press-and-hold for keys in favor of key repeat
+defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+# Keyboard - Enable keyboard access for all controls
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
-printf "Keyboard - Set a fast keyboard repeat rate\n"
-defaults write NSGlobalDomain KeyRepeat -int 1
-
-printf "Keyboard - Set a fast keyboard start repeat\n"
-defaults write NSGlobalDomain InitialKeyRepeat -int 10
-
-printf "Keyboard - Disable press-and-hold for keys in favor of key repeat\n"
-defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
-
-printf "Trackpad - Map bottom right corner to right-click\n"
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadCornerSecondaryClick -int 2
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -bool true
-defaults -currentHost write NSGlobalDomain com.apple.trackpad.trackpadCornerClickBehavior -int 1
-defaults -currentHost write NSGlobalDomain com.apple.trackpad.enableSecondaryClick -bool true
-
-printf "Trackpad - Enable tap to click for current user and the login screen\n"
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
-defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
-defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
-
-echo "Setting trackpad & mouse speed to a reasonable number"
-defaults write -g com.apple.trackpad.scaling 2
-defaults write -g com.apple.mouse.scaling 2.5
-
-printf "Trackpad - Use CONTROL (^) with scroll to zoom\n"
-defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true
-defaults write com.apple.universalaccess HIDScrollZoomModifierMask -int 262144
-
-printf "Trackpad - Follow keyboard focus while zoomed in\n"
-defaults write com.apple.universalaccess closeViewZoomFollowsFocus -bool true
-
-printf "Bluetooth - Increase sound quality for headphones/headsets\n"
-defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
-
-printf "Finder - Show the $HOME/Library folder\n"
-chflags nohidden $HOME/Library
-
-printf "Finder - Show hidden files\n"
+# Finder - Show hidden files
 defaults write com.apple.finder AppleShowAllFiles -bool true
-
-printf "Finder - Show filename extensions\n"
+# Finder - Show filename extensions
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
-
-printf "Finder - Disable the warning when changing a file extension\n"
+# Finder - Disable the warning when changing a file extension
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
-
-printf "Finder - Show path bar\n"
+# Finder - Show path bar
 defaults write com.apple.finder ShowPathbar -bool true
-
-printf "Finder - Show status bar\n"
+# Finder - Show status bar
 defaults write com.apple.finder ShowStatusBar -bool true
-
-printf "Finder - Display full POSIX path as window title\n"
+# Finder - Display full POSIX path as window title
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
-
-printf "Finder - Allow quitting via COMMAND+Q -- Doing so will also hide desktop icons\n"
+# Finder - Allow quitting via COMMAND+Q -- Doing so will also hide desktop icons
 defaults write com.apple.finder QuitMenuItem -bool true
+# Finder - Set Current Folder as Default Search Scope
+defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
+# Set Default Finder Location to Home Folder
+defaults write com.apple.finder NewWindowTarget -string "PfLo" && \
+defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/Downloads"
 
-printf "Finder - Disable the warning before emptying the Trash\n"
-defaults write com.apple.finder WarnOnEmptyTrash -bool false
-
-printf "Finder - Allow text selection in Quick Look\n"
-defaults write com.apple.finder QLEnableTextSelection -bool true
-
-printf "Safari - Set home page to 'about:blank' for faster loading\n"
-defaults write com.apple.Safari HomePage -string "about:blank"
-
-printf "Safari - Hide bookmarks bar\n"
-defaults write com.apple.Safari ShowFavoritesBar -bool false
-
-printf "Safari - Use Contains instead of Starts With in search banners\n"
-defaults write com.apple.Safari FindOnPageMatchesWordStartsOnly -bool false
-
-printf "Safari - Enable debug menu\n"
+# Safari Enable Develop Menu and Web Inspector
 defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
-
-printf "Safari - Enable the Develop menu and the Web Inspector\n"
 defaults write com.apple.Safari IncludeDevelopMenu -bool true
 defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
 defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true
+defaults write -g WebKitDeveloperExtras -bool true
+# Safari Use Backspace/Delete to Go Back a Page
+defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2BackspaceKeyNavigationEnabled -bool YES
 
-printf "Safari - Add a context menu item for showing the Web Inspector in web views\n"
-defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
+# System - Expand save panel by default
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+# System - Disable the 'Are you sure you want to open this application?' dialog
+defaults write com.apple.LaunchServices LSQuarantine -bool false
+# System - Increase window resize speed for Cocoa applications
+defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
+# System - Avoids creating .DS_Store files on network volumes
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+# System - Avoids creation of .DS_Store and AppleDouble files
+defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
+# System - Get SF Mono Fonts
+cp -v /Applications/Utilities/Terminal.app/Contents/Resources/Fonts/SFMono-* ~/Library/Fonts
 
-printf "Safari - Disable sending search queries to Apple.\n"
-defaults write com.apple.Safari UniversalSearchEnabled -bool false
+# System - Put Display to Sleep after 15 Minutes of Inactivity
+sudo pmset displaysleep 15
+# System - Put Computer to Sleep after 30 Minutes of Inactivity
+sudo pmset sleep 30
+# Disable Sound Effects on Boot
+sudo nvram SystemAudioVolume=" "
 
-printf "TextEdit - Use plain text mode for new documents\n"
-defaults write com.apple.TextEdit RichText -int 0
-
-printf "TextEdit - Open and save files as UTF-8 encoding\n"
-defaults write com.apple.TextEdit PlainTextEncoding -int 4
-defaults write com.apple.TextEdit PlainTextEncodingForWrite -int 4
-
-printf "Disk Utility - Enable debug menu\n"
-defaults write com.apple.DiskUtility DUDebugMenuEnabled -bool true
-defaults write com.apple.DiskUtility advanced-image-options -bool true
-
-printf "Time Machine - Prevent prompting to use new hard drives as backup volume\n"
-defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
-
-echo "Spotlight - Disable indexing for any volume that gets mounted and has not yet"
-sudo defaults write /.Spotlight-V100/VolumeConfiguration Exclusions -array "/Volumes"
-
-echo "Disable Photos.app from starting everytime a device is plugged in"
-defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
-
-printf "Printer - Expand print panel by default\n"
-defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
-
-printf "Printer - Automatically quit printer app once the print jobs complete\n"
-defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
-
-printf "App Store - Enable the WebKit Developer Tools in the Mac App Store\n"
-defaults write com.apple.appstore WebKitDeveloperExtras -bool true
-
-printf "App Store - Enable Debug Menu in the Mac App Store\n"
-defaults write com.apple.appstore ShowDebugMenu -bool true
+# precisa confirmação. http://www.digitalcitizen.life/simple-questions-what-trim-ssds-why-it-useful
+sudo trimforce enable
