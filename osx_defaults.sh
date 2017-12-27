@@ -64,5 +64,8 @@ sudo pmset sleep 30
 # Disable Sound Effects on Boot
 sudo nvram SystemAudioVolume=" "
 
+killall Finder
+killall Dock
 # precisa confirmação. http://www.digitalcitizen.life/simple-questions-what-trim-ssds-why-it-useful
-sudo trimforce enable
+echo 'Executar o comando abaixo para HD SSD:'
+echo 'sudo trimforce enable'
