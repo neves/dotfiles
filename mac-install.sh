@@ -21,7 +21,7 @@ mkdir -p ~/Library/LaunchAgents
 curl -L https://github.com/mkalmes/brewupdate/raw/develop/brewupdate-install.sh | bash
 
 # dotfiles
-git clone https://github.com/neves/dotfiles.git ~/dotfiles || true
+git clone git@github.com:neves/dotfiles.git ~/dotfiles || true
 ln -fs ~/dotfiles/gitconfig ~/.gitconfig
 ln -fs ~/dotfiles/gitignore_global ~/.gitignore_global
 
