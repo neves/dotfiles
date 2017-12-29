@@ -66,6 +66,9 @@ sudo nvram SystemAudioVolume=" "
 
 killall Finder
 killall Dock
+
+# Não habilitar trimforce para SSD formatado com sistema de arquivo APFS,
+# caso contrário o boot sobe de 30s para 1m45s!!!
 # precisa confirmação. http://www.digitalcitizen.life/simple-questions-what-trim-ssds-why-it-useful
-echo 'Executar o comando abaixo para HD SSD:'
-echo 'sudo trimforce enable'
+# echo 'Executar o comando abaixo para HD SSD:'
+# echo 'sudo trimforce enable'
