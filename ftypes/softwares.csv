@@ -1,7 +1,6 @@
-editor com.sublimetext.3                  html htm php css scss sass less xml erb haml slim txt srt rb ru py js coffee json log styl gitignore gitconfig editorconfig user sh zsh bash map lock env yml sql csv ofc ofx ini conf
-editor com.clockworkengine.mac.LightPaper md markdown rdoc
-viewer org.videolan.vlc                   avi mpg mp4 mkv mp3 m4a
-viewer com.apple.Preview                  jpg jpeg gif png
-viewer com.google.Chrome                  svg webp
-viewer com.adobe.Reader                   pdf
-viewer com.apple.QuickTimePlayerX         mov
+editor com.sublimetext.3          html htm php css scss sass less xml erb haml slim txt srt rb ru py js coffee json log styl gitignore gitconfig editorconfig user sh zsh bash map lock env yml sql csv ofc ofx ini conf
+editor com.electron.abricotine    md markdown rdoc
+viewer org.videolan.vlc           avi mpg mp4 mkv mp3 m4a
+viewer com.apple.Preview          jpg jpeg gif png pdf
+viewer com.google.Chrome          svg webp
+viewer com.apple.QuickTimePlayerX mov
