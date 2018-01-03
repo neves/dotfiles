@@ -18,7 +18,6 @@ cask iterm2 # http://iterm2.com/version3.html
 cask sublime-text
 cask google-chrome
 cask firefox
-cask evernote
 cask rowanj-gitx
 cask sourcetree
 cask sequel-pro
@@ -35,17 +34,21 @@ cask intel-power-gadget
 cask rcdefaultapp
 cask 'db-browser-for-sqlite'
 cask 'visual-studio-code'
+cask abricotine # markdown editor
+
+# OPCIONAIS
 
 # cask megasync, args: { appdir: '/Applications' }
 # cask install box-sync
 # cask install cheatsheet && open -a CheatSheet # keyboard shortcut holding CMD
 
-# OPCIONAIS
-
+# cask evernote
 # cask ibettercharge # avisa quando a bateria do celular estiver acabando
 # cask audioslicer # separar capítulos de audiobooks
 # cask coconutbattery
 # cask flux # amarelar a tela de noite, nao precisa no Sierra
+# cask disk-drill # disk tools and boot creator
+# cask install-disk-creator # create Mac OS Installer USB
 
 ENV['AT_EXIT'] && at_exit do
   `open -a Dropbox`
