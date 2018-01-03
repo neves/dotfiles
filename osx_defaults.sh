@@ -55,12 +55,12 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 # System - Avoids creation of .DS_Store and AppleDouble files
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 # System - Get SF Mono Fonts
-cp -v /Applications/Utilities/Terminal.app/Contents/Resources/Fonts/SFMono-* ~/Library/Fonts
+cp /Applications/Utilities/Terminal.app/Contents/Resources/Fonts/SFMono-* ~/Library/Fonts
 
-# System - Put Display to Sleep after 15 Minutes of Inactivity
-sudo pmset displaysleep 15
 # System - Put Computer to Sleep after 30 Minutes of Inactivity
 sudo pmset sleep 30
+# System - Put Display to Sleep after 15 Minutes of Inactivity
+sudo pmset displaysleep 15
 # Disable Sound Effects on Boot
 sudo nvram SystemAudioVolume=" "
 
