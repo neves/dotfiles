@@ -55,7 +55,7 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 # System - Avoids creation of .DS_Store and AppleDouble files
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 # System - Get SF Mono Fonts
-cp /Applications/Utilities/Terminal.app/Contents/Resources/Fonts/SFMono-* ~/Library/Fonts
+sudo cp /Applications/Utilities/Terminal.app/Contents/Resources/Fonts/SFMono-* ~/Library/Fonts
 
 # System - Put Computer to Sleep after 30 Minutes of Inactivity
 sudo pmset sleep 30
