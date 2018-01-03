@@ -1,4 +1,4 @@
-# Primeiro configurar iCloud no mac, depois linkar a pasta osx para o home
+# Primeiro configurar iCloud no mac
 clear
 unalias ln
 echo '.................................................................................................................'
@@ -6,6 +6,7 @@ echo '..........................................................................
 # USER CONFIG
 
 unlink ~/osx
+# linkar a pasta osx do icloud ou Dropbox para o home
 ln -Fs ~/Library/Mobile\ Documents/com~apple~CloudDocs/osx ~/osx
 ln -fs ~/osx/.gitconfig.user ~/.gitconfig.user
 unlink ~/.ssh
