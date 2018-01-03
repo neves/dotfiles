@@ -1,3 +1,5 @@
+# Use rsync instead of cp to copy files with progress
+alias rsync-copy="rsync -rvhtP"
 alias rm-node_modules="find .  -name 'node_modules' -print -type d -prune -exec rm -rf '{}' +"
 
 # show latest npm package version
