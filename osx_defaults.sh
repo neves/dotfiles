@@ -16,9 +16,9 @@ defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
 # Finder - Show hidden files
-defaults write com.apple.finder AppleShowAllFiles -bool true
+defaults write com.apple.finder AppleShowAllFiles true
 # Finder - Show filename extensions
-defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+defaults write -g AppleShowAllExtensions -bool true
 # Finder - Disable the warning when changing a file extension
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 # Finder - Show path bar
