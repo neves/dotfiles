@@ -45,5 +45,11 @@ ln -fs ~/dotfiles/.pryrc ~/.pryrc
 ruby-install -L
 ruby-install --no-reinstall --cleanup ruby -- --disable-install-rdoc
 
+# Docker do brew não utiliza Hyperkit, utilizar direto do site
+wget -O ~/Downloads/Docker.dmg https://download.docker.com/mac/stable/Docker.dmg
+sudo hdiutil attach ~/Downloads/Docker.dmg
+\cp -rf /Volumes/Docker/Docker.app /Volumes/Docker/Applications
+sudo hdiutil detach /Volumes/Docker
+
 # Caskfile
 brew bundle --file=~/dotfiles/Caskfile -v

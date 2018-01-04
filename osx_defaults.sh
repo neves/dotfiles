@@ -44,6 +44,11 @@ defaults write -g WebKitDeveloperExtras -bool true
 # Safari Use Backspace/Delete to Go Back a Page
 defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2BackspaceKeyNavigationEnabled -bool YES
 
+# System - autohide dock
+defaults write com.apple.dock autohide -bool true
+# System- Menu bar extra: show remaining battery, hide remaining time
+defaults write com.apple.menuextra.battery ShowPercent -string "YES"
+defaults write com.apple.menuextra.battery ShowTime -string "NO"
 # System - Expand save panel by default
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
 # System - Disable the 'Are you sure you want to open this application?' dialog

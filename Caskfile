@@ -26,7 +26,6 @@ cask flycut # clipboard history
 cask vlc
 cask subtitle-master
 cask transmission
-cask atom
 cask dash3 # license.dash-license no DropBox/osx
 cask postgres, args: { appdir: '/Applications' }
 cask psequel
@@ -35,9 +34,11 @@ cask rcdefaultapp
 cask 'db-browser-for-sqlite'
 cask 'visual-studio-code'
 cask abricotine # markdown editor
+cask karabiner-elements
 
 # OPCIONAIS
 
+# cask atom
 # cask megasync, args: { appdir: '/Applications' }
 # cask install box-sync
 # cask install cheatsheet && open -a CheatSheet # keyboard shortcut holding CMD
