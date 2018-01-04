@@ -38,6 +38,7 @@ cask karabiner-elements
 
 # OPCIONAIS
 
+# cask slack
 # cask atom
 # cask megasync, args: { appdir: '/Applications' }
 # cask install box-sync
