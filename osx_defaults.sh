@@ -69,7 +69,7 @@ sudo cp /Applications/Utilities/Terminal.app/Contents/Resources/Fonts/SFMono-* ~
 sudo pmset sleep 30
 # System - Put Display to Sleep after 15 Minutes of Inactivity
 sudo pmset displaysleep 15
-# Disable Sound Effects on Boot
+# Disable Sound Effects on Boot (não funciona) https://github.com/teored90/nobootsound/blob/master/install.sh
 sudo nvram SystemAudioVolume=" "
 
 killall Finder
