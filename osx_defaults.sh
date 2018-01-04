@@ -44,6 +44,9 @@ defaults write -g WebKitDeveloperExtras -bool true
 # Safari Use Backspace/Delete to Go Back a Page
 defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2BackspaceKeyNavigationEnabled -bool YES
 
+# System - Three Finger Drag
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerDrag -bool true
+defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerDrag -bool true
 # System - autohide dock
 defaults write com.apple.dock autohide -bool true
 # System- Menu bar extra: show remaining battery, hide remaining time
