@@ -9,6 +9,7 @@ echo '..........................................................................
 ln -Fsn ~/Library/Mobile\ Documents/com~apple~CloudDocs/osx ~/osx
 ln -fs ~/osx/.gitconfig.user ~/.gitconfig.user
 ln -fs ~/osx/.zhistory ~/.zhistory
+ln -fs ~/osx/.fasd ~/.fasd
 # ssh
 ln -Fsn ~/osx/.ssh ~/.ssh
 chmod go-rwx ~/.ssh/*
