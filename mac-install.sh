@@ -5,12 +5,12 @@ echo '..........................................................................
 
 # USER CONFIG
 
-unlink ~/osx
 # linkar a pasta osx do icloud ou Dropbox para o home
-ln -Fs ~/Library/Mobile\ Documents/com~apple~CloudDocs/osx ~/osx
+ln -Fsn ~/Library/Mobile\ Documents/com~apple~CloudDocs/osx ~/osx
 ln -fs ~/osx/.gitconfig.user ~/.gitconfig.user
-unlink ~/.ssh
-ln -Fs ~/osx/.ssh ~/.ssh
+ln -fs ~/osx/.zhistory ~/.zhistory
+# ssh
+ln -Fsn ~/osx/.ssh ~/.ssh
 chmod go-rwx ~/.ssh/*
 chmod go-rwx ~/.ssh
 

@@ -1,4 +1,6 @@
 zstyle ':prezto:*:*' color 'yes'
+# desligar alias ln=lni, mv=mvi, etc
+zstyle ':prezto:module:utility' safe-ops 'no'
 
   # 'environment' \
   # 'terminal' \
@@ -23,4 +25,4 @@ zstyle ':prezto:module:prompt' theme 'kylewest'
 source $HOME/.zprezto/init.zsh
 
 # Save history to DropBox (after to not be overritten)
-HISTFILE=$HOME/Dropbox/osx/zsh/.zhistory
+# HISTFILE=$HOME/Dropbox/osx/zsh/.zhistory
