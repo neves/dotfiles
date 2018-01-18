@@ -44,6 +44,7 @@ cask karabiner-elements
 # cask install box-sync
 # cask install cheatsheet && open -a CheatSheet # keyboard shortcut holding CMD
 # cask onyx # https://www.titanium-software.fr/en/onyx.html
+# cask java
 
 # cask evernote
 # cask ibettercharge # avisa quando a bateria do celular estiver acabando
