@@ -53,6 +53,8 @@ cask karabiner-elements
 # cask flux # amarelar a tela de noite, nao precisa no Sierra
 # cask disk-drill # disk tools and boot creator
 # cask install-disk-creator # create Mac OS Installer USB
+# cask disablemonitor # alterar resolução
+# cask fsmonitor # monitorar alterações no sistema de arquivo em tempo real
 
 ENV['AT_EXIT'] && at_exit do
   `open -a Dropbox`
