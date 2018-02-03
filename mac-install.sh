@@ -6,7 +6,9 @@ echo '..........................................................................
 # USER CONFIG
 
 # linkar a pasta osx do icloud ou Dropbox para o home
-ln -Fsn ~/Library/Mobile\ Documents/com~apple~CloudDocs/osx ~/osx
+ln -Fsn ~/Library/Mobile\ Documents/com~apple~CloudDocs ~/icloud
+ln -Fsn ~/icloud/osx ~/osx
+
 ln -fs ~/osx/.gitconfig.user ~/.gitconfig.user
 ln -fs ~/osx/.zhistory ~/.zhistory
 ln -fs ~/osx/.fasd ~/.fasd
