@@ -24,6 +24,7 @@ source $HERE/tools/shell.zsh
 source $HERE/git.zsh
 source $HERE/nvm.zsh # Node Version Manager
 source $HERE/gcloud.zsh # Google Cloud/AppEngine
+source $HERE/asdf.zsh # universal version manager https://github.com/asdf-vm/asdf
 type fasd >/dev/null 2>&1 && source $HERE/fasd.zsh # z jump
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh # fuzzy terminal search

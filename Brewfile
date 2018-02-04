@@ -35,10 +35,9 @@ brew gnu-sed
 brew git-imerge
 brew the_silver_searcher # ag
 brew direnv
-brew heroku
-brew chruby # melhor que rbenv
-brew 'ruby-install' # melhor que ruby-build
-brew yarn # força instalar o node global
+# brew chruby # melhor que rbenv (substituído por ASDF)
+# brew 'ruby-install' # melhor que ruby-build (substituído por ASDF)
+# brew yarn # força instalar o node global (substituído por ASDF)
 
 brew duti # configurar qual app abre qual extensão
 brew imagemagick
