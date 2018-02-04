@@ -3,6 +3,10 @@ clear
 unalias ln
 echo '.................................................................................................................'
 
+# Desligar bloqueio de apps baixadas
+# System Preferences > Security & Privacy > Allow apps downloaded from: Anyware
+sudo spctl --master-disable
+
 # USER CONFIG
 
 # linkar a pasta osx do icloud ou Dropbox para o home
