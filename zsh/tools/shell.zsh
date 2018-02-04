@@ -1,3 +1,7 @@
+function kexts-versions() {
+  find $1 -name Info.plist -print -exec /usr/libexec/PlistBuddy {} -c 'Print CFBundleVersion' \;
+}
+
 # Use rsync instead of cp to copy files with progress
 alias rsync-copy="rsync -rvhtP"
 alias rm-node_modules="find .  -name 'node_modules' -print -type d -prune -exec rm -rf '{}' +"
