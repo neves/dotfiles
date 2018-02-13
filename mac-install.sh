@@ -18,7 +18,7 @@ ln -fs ~/osx/.gitconfig.user ~/.gitconfig.user
 ln -f ~/osx/.zhistory ~/.zhistory
 ln -f ~/osx/.fasd ~/.fasd
 # ssh
-ln -Fsn ~/osx/.ssh ~/.ssh
+ln -Fsn ~/osx/ssh ~/.ssh
 chmod go-rwx ~/.ssh/*
 chmod go-rwx ~/.ssh
 
